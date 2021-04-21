@@ -82,6 +82,13 @@
                     </select>
                     <small th:if="${#fields.hasErrors('store')}" th:errors="*{store}" id="storeError" class="form-text bg-danger rounded">You must select genre</small>
                 </div>
+
+
+                <div class="col">
+                    <label for="details">Copyright</label>
+                    <input id="details" th:value="*{details}" th:errorclass="bg-danger" name="details" required minlength="2" maxlength="90" type="text" class="form-control" placeholder="Детайли">
+                    <small th:if="${#fields.hasErrors('details')}" th:errors="*{details}" id="detailsError" class="form-text bg-danger rounded">Products List must be less</small>
+                </div>
             </div>
 
 
@@ -90,6 +97,10 @@
                 <div class="form-check form-check-inline pl-2">
                     <input class="form-check-input" type="checkbox" id="nimaTested"  name="nimaTested" th:checked="*{nimaTested}">
                     <label class="form-check-label" for="nimaTested">Тестван с Нима</label>
+                </div>
+                <div class="form-check form-check-inline pl-2">
+                    <input class="form-check-input" type="checkbox" id="glutenTox"  name="glutenTox" th:checked="*{glutenTox}">
+                    <label class="form-check-label" for="glutenTox">Тестван с GlutenTox</label>
                 </div>
                 <div class="form-check form-check-inline pl-2">
                     <input class="form-check-input" type="checkbox" id="markedAsGF" name="markedAsGF" th:checked="*{markedAsGF}" >

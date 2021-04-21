@@ -1,6 +1,5 @@
 package eu.glutfree.glutfree.model.service;
 
-import eu.glutfree.glutfree.model.entities.StoreEntity;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
@@ -19,6 +18,8 @@ public class FoodAddServiceModel {
     private boolean markedAsGF;
     private boolean withoutLactose;
     private String store;
+    private String details;
+    private boolean glutenTox;
 
     public FoodAddServiceModel() {
     }
@@ -118,5 +119,21 @@ public class FoodAddServiceModel {
 
     public void setCopyright(String copyright) {
         this.copyright = copyright;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public boolean isGlutenTox() {
+        return glutenTox;
+    }
+
+    public void setGlutenTox(boolean glutenTox) {
+        this.glutenTox = glutenTox;
     }
 }

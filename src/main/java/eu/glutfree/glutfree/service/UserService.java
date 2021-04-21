@@ -2,7 +2,6 @@ package eu.glutfree.glutfree.service;
 
 import eu.glutfree.glutfree.model.entities.UserEntity;
 import eu.glutfree.glutfree.model.service.UserRegistrationServiceModel;
-import eu.glutfree.glutfree.model.service.UserUpdateServiceModel;
 
 import java.util.List;
 
@@ -29,4 +28,5 @@ public interface UserService {
     void deleteRole(String username, String role);
 
 
+    void deleteUser(String username);
 }

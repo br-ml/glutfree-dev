@@ -29,7 +29,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 // allow access to static resources to anyone
                         antMatchers("/js/**", "/css/**", "/img/**").permitAll().
                 // allow access to index, user login and registration to anyone
-                        antMatchers("/roles/delete","/roles/add","/food/add", "/food/delete/*", "/receipt/add","/receipt/delete/*", "/feedback/add", "/feedback/delete/*").hasRole("ADMIN").
+                        antMatchers("/roles/delete","/roles/add","/food/add", "/food/delete/*", "/receipt/add","/receipt/delete/*", "/feedback/add", "/feedback/delete/*", "/users/delete", "/users/delete/*").hasRole("ADMIN").
 
                          antMatchers("/", "/users/login", "/users/register", "/blog", "/food/tested", "/food/api", "/food/api-tested", "/food/", "/food/details/*","/receipt/", "/feedback/", "/aboutus").permitAll().
                                         // protect all other pages

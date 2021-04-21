@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="frags/head"></head>
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+</header>
+
+<main class="p-2 align-content-center  my-register-div">
+    <section class="mainadd">
+        <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen mb-5">Изтриване на роля</h1>
+
+        <div class="container">
+
+            <div class="row tm-mt-big justify-content-center">
+                <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+                    <div class="bg-transparent tm-block">
+
+                        <div class="row mt-4 tm-edit-product-row">
+                            <div class="col-xl-7 col-lg-7 col-md-12">
+                                <form th:action="@{/users/delete}" method="POST"
+                                      class="tm-edit-product-form" >
+                                    <div class="input-group mb-3">
+                                        <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Потребители</label>
+                                        <select class="custom-select col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" name="username">
+                                            <option value="" selected>Изберете потребител</option>
+                                            <option th:each="n:${usernames}" th:text="${n}" th:value="${n}"> </option>
+
+
+
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
+                                            <button type="submit" class="btn btn-primary">Изтрий
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer th:replace="frags/footer"></footer>
+
+</div>
+
+
+</body>
+
+</html>

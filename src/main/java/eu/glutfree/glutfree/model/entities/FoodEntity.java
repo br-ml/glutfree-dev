@@ -1,11 +1,11 @@
 package eu.glutfree.glutfree.model.entities;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
 @Table(name="foods")
@@ -16,11 +16,14 @@ public class FoodEntity extends BaseEntity{
     private String urlToPic;
     private String copyright;
     private boolean nimaTested;
+
     private boolean markedAsGF = false;
     private boolean withoutLactose = false;
     private String urlToLabelImage;
     private LocalDate pictureDate;
     private StoreEntity store;
+    private String details;
+    private boolean glutenTox;
 
 
     public FoodEntity() {
@@ -109,5 +112,21 @@ public class FoodEntity extends BaseEntity{
 
     public void setCopyright(String copyright) {
         this.copyright = copyright;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public boolean isGlutenTox() {
+        return glutenTox;
+    }
+
+    public void setGlutenTox(boolean glutenTox) {
+        this.glutenTox = glutenTox;
     }
 }

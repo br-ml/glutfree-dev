@@ -1,20 +1,15 @@
 package eu.glutfree.glutfree.web;
 
-import eu.glutfree.glutfree.model.bindings.UserLoginBindingModel;
 import eu.glutfree.glutfree.model.bindings.UserRegistrationBindingModel;
 import eu.glutfree.glutfree.model.bindings.UserUpdateBindingModel;
 import eu.glutfree.glutfree.model.service.UserRegistrationServiceModel;
-import eu.glutfree.glutfree.model.service.UserUpdateServiceModel;
 import eu.glutfree.glutfree.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -138,6 +133,18 @@ public class UserController {
         userService.updateUser(userRegistrationServiceModel);
 
         return "redirect:/home";
+    }
+
+
+    @GetMapping("/delete")
+    public String deleteUser(Model model){
+        model.addAttribute("usernames",userService.findAllUserNames());
+        return "user-delete";
+    }
+    @PostMapping("/delete")
+    public String deleteCofirm(@RequestParam String username){
+        userService.deleteUser(username);
+        return "user-deleted";
     }
 
 

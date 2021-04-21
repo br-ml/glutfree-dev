@@ -1,14 +1,11 @@
 package eu.glutfree.glutfree.model.bindings;
 
-import eu.glutfree.glutfree.model.entities.StoreEntity;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
-import java.util.Set;
 
 public class FoodAddBindingModel {
 
@@ -22,6 +19,8 @@ public class FoodAddBindingModel {
     private boolean markedAsGF;
     private boolean withoutLactose;
     private String store;
+    private String details;
+    private boolean glutenTox;
 
     public FoodAddBindingModel() {
     }
@@ -130,5 +129,21 @@ public class FoodAddBindingModel {
 
     public void setCopyright(String copyright) {
         this.copyright = copyright;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public boolean isGlutenTox() {
+        return glutenTox;
+    }
+
+    public void setGlutenTox(boolean glutenTox) {
+        this.glutenTox = glutenTox;
     }
 }

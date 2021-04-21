@@ -32,6 +32,11 @@
             <div class="pr-4"  id="image4" style="display:inline;">
                 <img  src="/img/LactoseFree-s-logo.png" alt="pic"
                       style="height: 40px; width: 40px;">            </div>
+            <div id="text5" style="display:inline; white-space:nowrap;">
+                Тествано с GlutenToxHome :            </div>
+            <div class="pr-4"  id="image5" style="display:inline;">
+                <img  src="/img/logo-tox3.png" alt="pic"
+                      style="height: 40px; width: 140px;">            </div>
 
         </div>
         <hr class="border-bottom w-75">
@@ -44,8 +49,10 @@
                 <dd class="col-sm-9 text-lightgreen text-left pb-2" th:text="|*{name}|">Име</dd>
                 <dt class="col-sm-3 text-lightgreen text-right p-0 ">Марка: </dt>
                 <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{brand}|">Марка</dd>
+                <dt class="col-sm-3 text-lightgreen text-right p-0" >Детайли:</dt>
+                <dd class="col-sm-9 text-lightgreen text-left pb-2" th:text="|*{details}|">Детайли</dd>
                 <dt class="col-sm-3 text-lightgreen text-right p-0 ">Тествано на: </dt>
-                <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{pictureDate}|">Марка</dd>
+                <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{pictureDate}|">Тествано на</dd>
                 <dt class="col-sm-3 text-lightgreen text-right p-0 align-content-center ">Магазин: </dt>
                 <a  class="text-lightgreen" th:href= "*{store}">
                     <dd class="col-sm-9 text-lightgreen text-left pb-2">
@@ -62,6 +69,9 @@
 
                 <img th:if="*{withoutLactose}" src="/img/LactoseFree-s-logo.png" alt="pic"
                      style="height: 50px; width: 50px;">
+                <img th:if="*{glutenTox}" src="/img/logo-tox3.png" alt="pic"
+                     style="height: 50px; width: 140px;">
+
 
             </dl>
         </div>
@@ -73,7 +83,7 @@
             <img th:src="*{urlToLabelImage}" class="card-img-top center" alt="pic"
                  data-holder-rendered="true"
                  style="height: 425px; width: 400px;  text-align: center;">
-            <p class="text-lightgreen " style="white-space:nowrap" th:text="|Снимка: *{copyright}|" >Снимка:</p>
+            <p class="text-lightgreen " style="white-space:nowrap" th:text="|Снимка Facebook, публикувана от: *{copyright}|" >Снимка:</p>
 
         </div>
 

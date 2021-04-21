@@ -1,7 +1,6 @@
 package eu.glutfree.glutfree.service.impl;
 
 import eu.glutfree.glutfree.exceptions.RoleNotFoundException;
-import eu.glutfree.glutfree.exceptions.StoreNotFoundException;
 import eu.glutfree.glutfree.exceptions.UserNotFoundException;
 import eu.glutfree.glutfree.model.entities.UserEntity;
 import eu.glutfree.glutfree.model.entities.UserRoleEntity;
@@ -16,11 +15,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,15 +53,11 @@ public class UserServiceImpl implements UserService {
 
             userRoleRepository.saveAll(List.of(adminRole, userRole));
 
-            UserEntity user = new UserEntity().setUsername("user1").setEmail("user1@user1.com").setPassword(passwordEncoder.encode("user1"));
-            UserEntity user2 = new UserEntity().setUsername("user2").setEmail("user1@user2.com").setPassword(passwordEncoder.encode("user222"));
             UserEntity admin = new UserEntity().setUsername("admin").setEmail("admin@admin.com").setPassword(passwordEncoder.encode("admin"));
 
             admin.setRoles(List.of(adminRole, userRole));
-            user.setRoles(List.of(userRole));
-            user2.setRoles(List.of(userRole));
 
-            userRepository.saveAll(List.of(admin, user));
+            userRepository.saveAll(List.of(admin));
         }
     }
 
@@ -180,10 +174,11 @@ public class UserServiceImpl implements UserService {
         userEntity.setRoles(newUserRolls);
         userRepository.save(userEntity);
     }
-
-
-
-
+    @Transactional
+    @Override
+    public void deleteUser(String username) {
+        userRepository.deleteByUsername(username);
+    }
 
 
 }

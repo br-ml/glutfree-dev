@@ -17,6 +17,7 @@
             <a class="dropdown-item text-darkgreen" href="/store/add">Add Store</a>
             <a class="dropdown-item text-darkgreen" href="/roles/add">Add Role to User</a>
             <a class="dropdown-item text-darkgreen" href="/roles/delete">Delete User Role</a>
+            <a class="dropdown-item text-darkgreen" href="/users/delete">Delete User </a>
         </div>
     </div>
 
@@ -72,7 +73,7 @@
         </ul>
 
 
-        <div  sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown">
+        <div  sec:authorize="isAuthenticated()" class="dropdown">
             <button class="btn btn-secondary text-darkgreen border-1 bg-white dropdown-toggle" type="button" id="dropdownMenuButtonProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Профил
             </button>
