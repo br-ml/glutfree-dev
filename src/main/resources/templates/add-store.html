@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="frags/head"></head>
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+</header>
+
+<main class="p-1 text-center">
+    <section class="mainadd">
+    <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Добави Магазин</h1>
+    <div class=" py-2 d-flex justify-content-center">
+        <form th:action="@{/store/add}" method="POST"
+              th:object="${storeAddBindingModel}"
+              class="text-light">
+
+            <div class="form-row m-5 text-lightgreen">
+                <div class="col ">
+                    <label for="name" >Име на Магазина</label>
+                    <input id="name" th:value="*{name}" th:errorclass="bg-danger" name="name" type="text" class="form-control" placeholder="Име">
+                    <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}" id="nameError" class="form-text bg-danger rounded">Name must be between 3 and 20
+                        characters</small>
+                </div>
+                <div class="col">
+                    <label for="storeWebSiteUrl">Store Web Site</label>
+                    <input id="storeWebSiteUrl" th:value="*{storeWebSiteUrl}" th:errorclass="bg-danger" name="storeWebSiteUrl" type="text" class="form-control" placeholder="Web Site">
+                    <small th:if="${#fields.hasErrors('storeWebSiteUrl')}" th:errors="*{storeWebSiteUrl}" id="storeWebSiteUrlError" class="form-text bg-danger rounded">Products List must be less</small>
+                </div>
+
+            </div>
+            <div class="form-row m-5 text-lightgreen ">
+                <div class="col">
+                    <label for="logoUrl">Лого</label>
+                    <input id="logoUrl" th:value="*{logoUrl}" th:errorclass="bg-danger" name="logoUrl" type="text" class="form-control" placeholder="Лого">
+                    <small th:if="${#fields.hasErrors('logoUrl')}" th:errors="*{logoUrl}" id="logoUrlError" class="form-text bg-danger rounded">Products List must be less</small>
+                </div>
+
+            </div>
+
+<!--            <div class="form-row m-5 text-lightgreen">-->
+<!--                <div class="col">-->
+<!--                    <label for="description">Описание</label>-->
+<!--                    <textarea th:value="*{description}" th:errorclass="bg-danger" id="description" name="description" type="text" class="form-control" placeholder="Описание" style="height: 126px;" ></textarea>-->
+<!--                    <small  th:if="${#fields.hasErrors('description')}" th:errors="*{description}" id="descriptionError" class="form-text bg-danger rounded">Description length must be more than 5 characters</small>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="d-flex justify-content-center mt-4">
+                <button class="btn btn-primary btn-block w-50" type="submit">Добави</button>
+            </div>
+        </form>
+    </div>
+    </section>
+</main>
+<footer th:replace="frags/footer"></footer>
+</body>
+</html>

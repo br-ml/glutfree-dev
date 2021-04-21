@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="frags/head"></head>
+
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+    <section class="site-header">
+        <h1>Портал за храните без глутен</h1>
+
+        <form method="get" action="#welcomeSection">
+            <button>НАУЧИ ПОВЕЧЕ</button>
+        </form>
+    </section>
+</header>
+<main>
+
+    <section class="welcome" id="welcomeSection">
+        <h2>Добре дошли в портал за храни без глутен</h2>
+        <p>Портала предлага информация за храните без глутен на българския пазар.В блога ще споделяме информация за всичко свързано със заболяването и тн...
+        </p>
+
+    </section>
+
+    <section class="offers">
+        <h2>
+            Какво предлагаме
+        </h2>
+
+        <ul>
+            <li><a href="/food/tested">
+                <img src="../img/nima-logo.png" alt="pic">
+                <h3>Хртани тествани с Nima</h3>
+            </a>
+                <p>Тук може да намерите храни тествани с Nima или с други тестове. Всяка седмица, ще тестваме по една храна по ваш избор.</p>
+            </li>
+            <li><a href="/food/">
+                <img src="../img/glute-free-sign.png" alt="pic">
+                <h3>Храни отбелязани, че са без глутен.</h3>
+            </a>
+                <p>Тук може да намерите всички храни, на чиито етикет е написано, че са без глутен, лактоза и други алергени са отбелязавани.</p>
+           </li>
+            <li><a href="/receipt/">
+                <img src="../img/recipes-logo.png" alt="pic">
+                <h3>Рецепти</h3>
+            </a>
+                <p>Всяка седмица, ще споделяме по една рецепта, за храни направени без глутен. Рецептите са раделени в няколко категории.</p>
+            </li>
+            <li><a href="/feedback/">
+                <img src="../img/restorant-logo.png" alt="pic">
+                <h3>Обратна връзка за обекти</h3>
+            </a>
+                <p>В тази секция, ще намерите мнения за магазини, сладкарница, ресторанти и хотели, в които се предлагат храни без глутен.</p>
+            </li>
+            <li><a href="/blog">
+                <img src="../img/blog-logo.png" alt="pic">
+                <h3>Блог</h3>
+            </a>
+                <p>В блога ни ще споределяме, статии, интервюта и инфрмация за Цюлекия и как да се справим със суровия живот в България.</p>
+           </li>
+            <li><a href="/aboutus">
+                <img src="../img/aboutus-logo.png" alt="pic">
+                <h3>За нас</h3></a>
+                <p>Кои сме ние и защо сме се захвали с тази задача? Целта ни е да съберем колкото се може повече информация за храните без глутен на едно място.</p>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer th:replace="frags/footer"></footer>
+</body>
+</html>

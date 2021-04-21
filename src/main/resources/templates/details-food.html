@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="frags/head"></head>
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+</header>
+
+
+<main class="align-content-center bg-transparent">
+    <section class="mainadd">
+    <div class="justify-content-center">
+        <h1 class="text-lightgreen border-white pl-4 text-center" >Детайли за продукта</h1>
+        <hr class="border-bottom w-75">
+        <div id="container-legend" class="text-center" style="white-space:nowrap">
+            <div class="font-weight-bold h5" id="text1" style="display:inline; white-space:nowrap;">
+                Легенда :
+            </div>
+            <div id="text2" style="display:inline; white-space:nowrap;">
+                Тествано с Нима :            </div>
+            <div class="pr-4" id="image2" style="display:inline;">
+                <img src="/img/nima-logo.png" alt="pic"
+                     style="height: 40px; width: 40px;">            </div>
+            <div id="text3" style="display:inline; white-space:nowrap;">
+                Отбелязано без глутен :            </div>
+            <div class="pr-4"  id="image3" style="display:inline;">
+                <img src="/img/GlutenFree-s-logo.png" alt="pic"
+                     style="height: 40px; width: 40px; ">            </div>
+            <div id="text4" style="display:inline; white-space:nowrap;">
+                Отбелязано без лактоза :            </div>
+            <div class="pr-4"  id="image4" style="display:inline;">
+                <img  src="/img/LactoseFree-s-logo.png" alt="pic"
+                      style="height: 40px; width: 40px;">            </div>
+
+        </div>
+        <hr class="border-bottom w-75">
+
+    </div>
+    <div th:object="${food}" class="row rounded mb-5 mt-3">
+        <div  class="col-md-3  text-light rounded">
+            <dl class="row pt-3 border-1">
+                <dt class="col-sm-3 text-lightgreen text-right p-0" >Име:</dt>
+                <dd class="col-sm-9 text-lightgreen text-left pb-2" th:text="|*{name}|">Име</dd>
+                <dt class="col-sm-3 text-lightgreen text-right p-0 ">Марка: </dt>
+                <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{brand}|">Марка</dd>
+                <dt class="col-sm-3 text-lightgreen text-right p-0 ">Тествано на: </dt>
+                <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{pictureDate}|">Марка</dd>
+                <dt class="col-sm-3 text-lightgreen text-right p-0 align-content-center ">Магазин: </dt>
+                <a  class="text-lightgreen" th:href= "*{store}">
+                    <dd class="col-sm-9 text-lightgreen text-left pb-2">
+                        <img class="p-1" th:src= "*{storelogoUrl}" alt="pic"
+                             style="height: 50px; width: 50px;">
+                </a></dd>
+
+                <dt class="col-sm-3 text-lightgreen text-right p-0 ">Тестван: </dt>
+                <img th:if="*{nimaTested}" src="/img/nima-logo.png" alt="pic"
+                     style="height: 50px; width: 50px;">
+
+                <img th:if="*{markedAsGF}" src="/img/GlutenFree-s-logo.png" alt="pic"
+                     style="height: 50px; width: 50px; padding-left: 5px">
+
+                <img th:if="*{withoutLactose}" src="/img/LactoseFree-s-logo.png" alt="pic"
+                     style="height: 50px; width: 50px;">
+
+            </dl>
+        </div>
+
+        <div  class="col-md-8  p-2 text-light rounded border-1 border-darkgreen img-magnifier-container">
+            <img th:src="*{urlToPic}" class="card-img-top center" alt="pic"
+                 data-holder-rendered="true"
+                 style="height: 425px; width: 400px;  text-align: center;">
+            <img th:src="*{urlToLabelImage}" class="card-img-top center" alt="pic"
+                 data-holder-rendered="true"
+                 style="height: 425px; width: 400px;  text-align: center;">
+            <p class="text-lightgreen " style="white-space:nowrap" th:text="|Снимка: *{copyright}|" >Снимка:</p>
+
+        </div>
+
+        <script>
+
+        </script>
+
+
+    </div>
+
+        </section>
+</main>
+<footer th:replace="frags/footer"></footer>
+
+
+</body>
+</html>

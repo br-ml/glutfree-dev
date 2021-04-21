@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans&display=swap');
+body {
+ font-family: 'PT Sans', sans-serif;
+ font-size: 16px;
+ max-width: 1300px;
+ margin: 0 auto;
+
+}
+
+
+.topnavigation {
+    padding: 0 20px;
+}
+.topnavigation p{
+    display: inline-block;
+    font-size: 22px;
+    width: 955px;
+    margin: 0%;
+
+}
+.topnavigation p span{
+    color: #566616;
+}
+
+.topnavigation img {
+    width: 120px;
+    padding: 0 20px
+      
+}
+
+.topnavigation nav{
+    vertical-align:top;
+      
+}
+
+
+
+.navigation {
+    padding: 0 20px;
+    text-align: center;
+}
+.navigation p{
+    display: inline-block;
+    font-size: 22px;
+    width: 835px;
+    font-family: 'PT Serif', serif;
+}
+.navigation p span{
+    color: #566616;
+}
+.navigation li{
+    padding-right: 80px;
+   
+}
+.navigation li a{
+    font-size: 26px;
+    color: #566616;
+   
+}
+
+.navigation li a:hover {
+    color: #d8d476;
+    cursor: pointer;
+}
+
+
+
+nav {
+    display: inline-block;
+}
+
+
+
+li {
+    display: inline-block;
+    padding-right: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav i {
+    border:  1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+body > header > section.navigation > nav > ul > li:nth-child(5) {
+    padding-right: 5px;
+}
+
+ ul {
+     padding: 0px;
+ }
+
+ a:hover {
+     color: #566616;
+     cursor: pointer;
+ }
+ /*site-header*/
+ .site-header{
+     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('../img/headerpic.jpg') no-repeat center ;
+     background-size: cover;
+     width: 100%;
+     border-bottom: 10px solid #d8d476;
+     border-top: 10px solid #d8d476;
+
+    }
+.site-header h1 {
+    font-size: 50px;
+    color: white;
+    width: 35%;
+    margin: 0;
+    padding: 70px 0 100px 80px;
+}
+.site-header button {
+    font-size: 26 px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 0 60px 80px;
+}
+.site-header button:hover{
+    background:#566616 ;
+    border: 2px solid #566616;
+    cursor: pointer;
+}
+
+/*welcome*/
+.welcome {
+    color: #566616;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+h2 {
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    font-style: italic;
+    letter-spacing:  2px;
+    
+}
+
+.welcome p {
+    text-align: center;
+}
+
+/*offers*/
+.offers {
+    font-family: 'PT Serif', serif;
+    color:  #566616;
+    background:  #d8d476;
+    padding: 20px 30px;
+  
+    
+}
+
+.offers img {
+    width: 60px;
+        
+}
+
+.offers li {
+    width: 28%;
+    text-align: center;
+    padding: 20px 30px;
+      /* border:  1px solid #566616; */
+    
+}
+
+.offers a {
+    color: #566616;
+
+}
+
+
+
+/* footer */
+
+footer {
+    color: #566616;
+    /* margin: 20px; */
+    padding: 0 20px;
+}
+footer p {
+    font-family: 'PT Serif', serif;
+    display: inline-block;
+    width: 85%;
+    
+}
+footer ul {
+    display: inline-block;
+    font-family: 'PT Serif', serif;
+    
+}
+
+footer ul li a i {
+    border:  1px solid #566616;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+footer ul li a{
+    font-family: 'PT Serif', serif;
+    color:  #566616;
+}

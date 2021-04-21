@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<head>-->
+<!--    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>GlutFree</title>-->
+<!--    <link rel="icon" type="image/png" href="/img/glutfree.ico"/>-->
+<!--    <link rel="stylesheet" href="/css/style.css">-->
+<!--</head>-->
+
+<th:block th:include="~{fragements/head}"></th:block>
+<body>
+
+   <header>
+
+       <div th:replace="fragements/navbar::navbar"></div>
+
+       <!--    <section class="topnavigation">-->
+<!--        <p><a href="#">-->
+<!--            <img src="../img/Logo.png" alt="pic">-->
+<!--        </a></p>-->
+<!--    <nav>-->
+<!--        <ul>-->
+<!--            <li><a href="/users/login">ВХОД</a></li>-->
+<!--            <li><a href="/users/register">РЕГИСТРАЦИЯ</a></li>-->
+<!--            <li>-->
+<!--                <ul>-->
+<!--                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>-->
+<!--                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
+<!--                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>-->
+
+<!--                </ul>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+
+<!--    </section>-->
+    <section class="navigation">
+        <nav>
+            <ul>
+                <li><a href="#">Тествани с Nima</a></li>
+                <li><a href="#">Храни без Глутен</a></li>
+                <li><a href="#">Рецепти</a></li>
+                <li><a href="#">Хотели и Ресторанти</a></li>
+                <li><a href="#">Блог</a></li>
+            </ul>
+        </nav>
+        </section>
+
+    <section class="site-header">
+        <h1>Портал за храните без глутен</h1>
+        <button>НАУЧИ ПОВЕЧЕ</button>
+    </section>
+   </header>
+
+<main>
+    <section class="welcome">
+        <h2>Добре дошли в портал за храни без глутен</h2>
+        <p>Портала предлага информация за храните без глутен на българския пазар.В блога ще споделяме информация за всичко свързано със заболяването и тн... 
+        </p>
+    </section>
+
+    <section class="offers">
+        <h2>
+            Какво предлагаме
+        </h2>
+
+        <ul>
+            <li><a href="#">
+                <img src="../img/nima-logo.png" alt="pic">
+                <h3>Хртани тествани с Nima</h3>
+                <p>В този раздел ще публикуваме храни тествани с Nima или други тестове за намиране глутен. Всяка седмица, ще тестваме по една храна по ваш избор.</p>
+            </a></li>
+            <li><a href="#">
+                <img src="../img/glute-free-sign.png" alt="pic">
+                <h3>Храни отбелязани, че са без глутен.</h3>
+                <p>Тук може да намерите всички храни, на чиито етикет е написано, че са без глутен. Лактоза и други алергени са отбелязавани.</p>
+            </a></li>
+            <li><a href="#">
+                <img src="../img/recipes-logo.png" alt="pic">
+                <h3>Рецепти</h3>
+                <p>Всяка седмица, че споделяме по една рецепта, за храни намправени без глутен. Рецептите са раделени в няколко категории.</p>
+            </a></li>
+            <li><a href="#">
+                <img src="../img/restorant-logo.png" alt="pic">
+                <h3>Хотели и Ресторанти</h3>
+                <p>В тази секция, ще намерите мнения за ресторанти и хотели, в които се предлагат храни без глутен, както и мнения за готвача.</p>
+            </a></li>
+            <li><a href="#">
+                <img src="../img/blog-logo.png" alt="pic">
+                <h3>Блог</h3>
+                <p>В блога ни ще споределяме, статии, интервюта и инфрмация за Цюлекия и как да се справим със суровия живот в България.</p>
+            </a></li>
+            <li><a href="#">
+                <img src="../img/aboutus-logo.png" alt="pic">
+                <h3>За нас</h3>
+                <p>Кои сме ние и защо сме се захвали с тази задача, да суберем колкото се може повече информация на едно място.</p>
+            </a></li>
+        </ul>
+    </section>
+</main> 
+
+
+<footer>
+<p>© 2021 GlutFree Портал. Всички права запазени</p>
+<ul>
+    <li><a href="#">За нас</a></li>
+    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+
+</ul>
+</footer> 
+
+</body>
+</html>

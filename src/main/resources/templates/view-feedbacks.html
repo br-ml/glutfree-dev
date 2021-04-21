@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="frags/head"></head>
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+</header>
+<main class="p-1 text-center my-main">
+    <section class="mainadd">
+        <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички оратни връзки</h1>
+
+    <div class="row">
+        <div class="col-md-12 card-columns">
+<!--            <div class="card-deck">-->
+            <div th:each="a : ${feedbacks}" th:object="${a}" class="card mb-4 box-shadow bg-transparent">
+                <img th:src="*{urlToPic}" class="card-img-top" alt="Thumbnail [100%x225]"
+                     data-holder-rendered="true"
+                     style="height: 225px; width: 200px;">
+                <div class="card-body">
+                    <div class="text-center">
+                        <p class="card-text border-bottom "th:text="|Име: *{name}|"></p>
+                        <p class="card-text border-bottom "th:text="|Web Site: *{webSiteUrl}|" ></p>
+                        <p class="card-text border-bottom "th:text="|Обратна Връзка: *{feedbackText}|" ></p>
+                        <p class="card-text border-bottom "th:text="|Точки: *{score}|" ></p>
+                        <p class="card-text border-bottom" th:text="|Тип обект: *{typeOfPlace}|" ></p>
+                    </div>
+
+
+                    <div sec:authorize="hasRole('ROLE_ADMIN')" class="p-2 d-flex justify-content-center">
+                            <a th:href="@{/feedback/delete/{id}(id= *{id})}" type="button" class="btn btn-primary btn-block w-50">Delete</a>
+                    </div>
+                </div>
+            </div>
+<!--        </div>-->
+        </div>
+
+    </div>
+        </section>
+</main>
+<footer th:replace="frags/footer"></footer>
+</body>
+</html>

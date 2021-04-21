@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Judge v2</title>-->
+
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">-->
+<!--    <link rel="stylesheet" href="/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="/css/style.css">-->
+<!--    <script src="/js/jquery-3.3.1.min.js"></script>-->
+<!--    <script src="/js/bootstrap.min.js"></script>-->
+<!--</head>-->
+<head th:replace="fragments/head"></head>
+
+<header>
+    <section class="site-header">
+        <h1>Портал за храните без глутен</h1>
+        <button>НАУЧИ ПОВЕЧЕ</button>
+    </section>
+</header>
+
+
+<body id="reportsPage">
+<div id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-xl navbar-light bg-light rounded">
+                    <a class="navbar-brand" href="#">
+                        <h1 class="tm-site-title mb-0">Judge v2</h1>
+                    </a>
+                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex" href="#">
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex" href="#">
+                                    <span>Register</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container mt-lg-5 border-right border-bottom bg-transparent h-100">
+            <h1 class="w-100 text-light text-right">Welcome</h1>
+        </div>
+
+        <main>
+            <section class="welcome">
+                <h2>Добре дошли в портал за храни без глутен</h2>
+                <p>Портала предлага информация за храните без глутен на българския пазар.В блога ще споделяме информация за всичко свързано със заболяването и тн...
+                </p>
+            </section>
+
+            <section class="offers">
+                <h2>
+                    Какво предлагаме
+                </h2>
+
+                <ul>
+                    <li><a href="#">
+                        <img src="../img/nima-logo.png" alt="pic">
+                        <h3>Хртани тествани с Nima</h3>
+                        <p>В този раздел ще публикуваме храни тествани с Nima или други тестове за намиране глутен. Всяка седмица, ще тестваме по една храна по ваш избор.</p>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="../img/glute-free-sign.png" alt="pic">
+                        <h3>Храни отбелязани, че са без глутен.</h3>
+                        <p>Тук може да намерите всички храни, на чиито етикет е написано, че са без глутен. Лактоза и други алергени са отбелязавани.</p>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="../img/recipes-logo.png" alt="pic">
+                        <h3>Рецепти</h3>
+                        <p>Всяка седмица, че споделяме по една рецепта, за храни намправени без глутен. Рецептите са раделени в няколко категории.</p>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="../img/restorant-logo.png" alt="pic">
+                        <h3>Хотели и Ресторанти</h3>
+                        <p>В тази секция, ще намерите мнения за ресторанти и хотели, в които се предлагат храни без глутен, както и мнения за готвача.</p>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="../img/blog-logo.png" alt="pic">
+                        <h3>Блог</h3>
+                        <p>В блога ни ще споределяме, статии, интервюта и инфрмация за Цюлекия и как да се справим със суровия живот в България.</p>
+                    </a></li>
+                    <li><a href="#">
+                        <img src="../img/aboutus-logo.png" alt="pic">
+                        <h3>За нас</h3>
+                        <p>Кои сме ние и защо сме се захвали с тази задача, да суберем колкото се може повече информация на едно място.</p>
+                    </a></li>
+                </ul>
+            </section>
+        </main>
+
+
+
+
+        <footer th:replace="fragments/footer"></footer>
+
+    </div>
+</div>
+
+</body>
+</html>

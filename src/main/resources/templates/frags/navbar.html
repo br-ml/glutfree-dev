@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-nav rounded">
+    <p class="mb-0"><a  href="/">
+        <img src="/img/Logo.png" alt="pic">
+    </a>
+    </p>
+
+    <div sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown">
+        <button class="btn btn-secondary text-darkgreen border-1 bg-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin Panel
+        </button>
+        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item text-darkgreen" href="/store/add">Add Store</a>
+            <a class="dropdown-item text-darkgreen" href="/roles/add">Add Role to User</a>
+            <a class="dropdown-item text-darkgreen" href="/roles/delete">Delete User Role</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+
+
+        <ul class="navbar-nav row">
+
+            <li class="nav-item col-md-4" sec:authorize="!isAuthenticated()">
+                <form th:action="@{/users/login}" method="GET">
+                <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">
+                    Вход
+                </button>
+                </form>
+            </li>
+            <li class="nav-item col-md-4" sec:authorize="!isAuthenticated()">
+
+                <form th:action="@{/users/register}" method="GET">
+                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">
+                        Регистрация
+                    </button>
+                </form>
+            </li>
+
+            <li class="nav-item offset-sm-12" sec:authorize="hasRole('ROLE_ADMIN')"  >
+
+                <form th:action="@{/receipt/add}" method="GET">
+                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">
+                        Добави Рецепта
+                    </button>
+                </form>
+
+            </li>
+            <li class="nav-item offset-sm-12" sec:authorize="hasRole('ROLE_ADMIN')">
+                <form th:action="@{/feedback/add}" method="GET">
+                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">
+                        Добави feedback
+                    </button>
+                </form>
+            </li>
+
+            <li class="nav-item offset-sm-12" sec:authorize="hasRole('ROLE_ADMIN')">
+                <form th:action="@{/food/add}" method="GET">
+                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">
+                        Добави храна
+                    </button>
+                </form>
+            </li>
+
+        </ul>
+
+
+        <div  sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown">
+            <button class="btn btn-secondary text-darkgreen border-1 bg-white dropdown-toggle" type="button" id="dropdownMenuButtonProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Профил
+            </button>
+            <div class="dropdown-menu " aria-labelledby="dropdownMenuButtonProfile">
+                <form th:action="@{/users/update}" method="GET">
+                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-0 bg-white text-center active h5">
+                        Допълни профила
+                    </button>
+                </form>
+                <form th:action="@{/logout}" method="POST">
+                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-0 bg-white text-center active h5">
+                        Изход
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="frags/head"></head>
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+</header>
+
+
+<main class="align-content-center bg-transparent">
+    <section class="mainadd">
+    <div class="justify-content-center">
+        <h1 class="text-lightgreen border-white pl-4 text-center" >Детайли за обратната връзка</h1>
+        <hr class="border-bottom w-75">
+
+    </div>
+    <div th:object="${feedback}" class="row rounded mb-5 mt-3">
+        <div  class="col-md-3 bg-blur p-2 text-light rounded">
+            <img th:src="*{urlToPic}" class="card-img-top center" alt="pic"
+                 data-holder-rendered="true"
+                 style="height: 225px; width: 200px;  text-align: center;">
+            <dl class="row pt-3">
+                <dt class="col-sm-3">Име :</dt>
+                <dd class="col-sm-9" th:text="|*{name}|">Name</dd>
+
+                <dt class="col-sm-3">Пълент текст: </dt>
+                <dd class="col-sm-9" th:text="| *{feedbackText}|">feedbackText
+                </dd>
+
+                <dt class="col-sm-3">Линк към обекта: </dt>
+                <dd class="col-sm-9" th:text="| *{webSiteUrl}|">productsList
+                </dd>
+
+                <dt class="col-sm-3">Тип на обекта: </dt>
+                <dd class="col-sm-9" th:text="| *{typeOfPlace.name()}|">productsList
+                </dd>
+<!--          TODO-->
+
+            </dl>
+        </div>
+    </div>
+<!--    <div class="row rounded mb-5 mt-3">-->
+<!--        <div class="container mt-5">-->
+<!--            <div class="d-flex justify-content-center row ">-->
+<!--                <div class="col-md-8">-->
+<!--                    <div class="d-flex flex-column comment-section ">-->
+<!--                        <div class="bg-blur text-light p-2 rounded">-->
+<!--                            <div class="d-flex flex-row user-info">-->
+<!--                                <img class="rounded-circle"-->
+<!--                                     width="40">-->
+<!--                                <div class="d-flex flex-column justify-content-start ml-2">-->
+<!--                                    <span class="d-block font-weight-bold name"></span>-->
+<!--                                    <span> Comment added on date and time </span></div>-->
+<!--                            </div>-->
+<!--                            <div class="mt-2">-->
+<!--                                <p class="comment-text">Comment text</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="bg-blur text-light rounded ">-->
+<!--                            <div class="d-flex flex-row fs-12 float-right">-->
+<!--                                <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span-->
+<!--                                        class="ml-1">Like</span></div>-->
+<!--                                <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span>-->
+<!--                                </div>-->
+<!--                                <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="bg-blur text-light p-2 rounded">-->
+<!--                            <form action="/comments/add" method="POST">-->
+<!--                                <div class="d-flex flex-row align-items-start">-->
+<!--                                    <img class="rounded-circle"-->
+<!--                                         src="https://i.imgur.com/RpzrMR2.jpg"-->
+<!--                                         width="40"><textarea name="text"-->
+<!--                                                              class="form-control ml-1 shadow-none textarea"></textarea>-->
+<!--                                </div>-->
+<!--                                <input type="hidden" name="albumId" >-->
+<!--                                <div class="mt-2 text-right">-->
+<!--                                    <button class="btn btn-primary btn-sm shadow-none" type="submit">Post comment-->
+<!--                                    </button>-->
+<!--                                    <button class="btn btn-primary btn-sm ml-1 shadow-none" type="button">Cancel-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+        </section>
+</main>
+<footer th:replace="frags/footer"></footer>
+</body>
+</html>
