@@ -23,6 +23,6 @@ public class HomeController {
 
     @GetMapping("/aboutus")
     public String aboutus() {
-        return "coming-soon";
+        return "aboutus";
     }
 }
