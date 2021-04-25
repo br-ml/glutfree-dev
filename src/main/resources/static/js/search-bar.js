@@ -31,6 +31,8 @@ const displayFoods = (foods) => {
     foodList.innerHTML = foods
         .map((a) => {
             return ` <div class="col" >
+         <div class="col-md-12 card-columns">
+
                 <div class="card mb-4 box-shadow bg-transparent align-items-center">
                 <img src="${a.urlToPic}" class="card-img-top" alt="pic"
                      data-holder-rendered="true"
@@ -66,6 +68,7 @@ const displayFoods = (foods) => {
    
                     </div>
                 </div>
+            </div> 
             </div> 
             </div>`
         })

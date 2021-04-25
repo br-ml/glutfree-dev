@@ -27,6 +27,13 @@ footer {
 
 }
 
+.navbar img {
+    width: 160px;
+    padding: 0 20px
+
+
+}
+
 .bg-blur {
     background-color: rgb(0, 0, 0); /* Fallback color */
     background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
@@ -117,7 +124,7 @@ body {
     margin: 0 auto;
     padding: 20px 0;
 }
-h2 {
+.welcome h1 {
     text-align: center;
     font-family: 'PT Serif', serif;
     font-size: 30px;
@@ -125,6 +132,8 @@ h2 {
     letter-spacing:  2px;
 
 }
+
+
 
 .welcome p {
     text-align: center;
@@ -135,7 +144,7 @@ h2 {
 .offers {
     font-family: 'PT Serif', serif;
     color:  #566616;
-    background:  #d8d476;
+        background:  #d8d476;
     padding: 20px 30px;
 }
 
@@ -160,6 +169,15 @@ h2 {
 .offers a {
     color: #566616;
 
+
+}
+
+.offers h2 {
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing:  2px;
 
 }
 

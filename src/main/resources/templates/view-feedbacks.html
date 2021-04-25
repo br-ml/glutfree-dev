@@ -10,9 +10,13 @@
 <main class="p-1 text-center my-main">
     <section class="mainadd">
         <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички оратни връзки</h1>
-
+        <div class="mt-5 col-sm-12 my-auto align-self-center">
+            <input id="searchInput" class="form-control mr-sm-2 w-50 " type="search"
+                   placeholder="Търси по тип на обект или име на магазин" aria-label="Search">
+        </div>
+        <hr class="border-bottom w-75">
     <div class="row">
-        <div class="col-md-12 card-columns">
+        <div class="col-md-12 card-columns" id="feedbackList">
 <!--            <div class="card-deck">-->
             <div th:each="a : ${feedbacks}" th:object="${a}" class="card mb-4 box-shadow bg-transparent">
                 <img th:src="*{urlToPic}" class="card-img-top" alt="Thumbnail [100%x225]"
@@ -21,9 +25,11 @@
                 <div class="card-body">
                     <div class="text-center">
                         <p class="card-text border-bottom "th:text="|Име: *{name}|"></p>
-                        <p class="card-text border-bottom "th:text="|Web Site: *{webSiteUrl}|" ></p>
+                        <a class="text-lightgreen" target="_blank" th:href= "*{webSiteUrl}">
+                          <p class="card-text border-bottom "th:text="|Web Site: *{webSiteUrl}|" ></p>
+                        </a>
                         <p class="card-text border-bottom "th:text="|Обратна Връзка: *{feedbackText}|" ></p>
-                        <p class="card-text border-bottom "th:text="|Точки: *{score}|" ></p>
+<!--                        <p class="card-text border-bottom "th:text="|Точки: *{score}|" ></p>-->
                         <p class="card-text border-bottom" th:text="|Тип обект: *{typeOfPlace}|" ></p>
                     </div>
 
@@ -40,5 +46,6 @@
         </section>
 </main>
 <footer th:replace="frags/footer"></footer>
+<script th:src="@{/js/feedback-search-bar.js}"></script>
 </body>
 </html>

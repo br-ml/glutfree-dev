@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
-    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Glutfree</title>
+    <title>Glutfree - Портал за храните без глутен и целиакия.</title>
+
+    <meta name="description" content="Искате да разбере кои са хрните без глутен в България? Порталът предлага база данни с хранителни продукти, рецепти и обратна връзка за обекти.">
+    <meta name="keywords" content="глутен,  целиакия, цьолиакия, gluten, заболяване" />
+    <meta name=“robots“ content=“index,follow“>
+
     <link rel="stylesheet" href="/css/reset-css.css"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
     <link href="/img/glutfree.ico" rel="shortcut icon">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QCBEZT2HS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8QCBEZT2HS');
+    </script>
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>

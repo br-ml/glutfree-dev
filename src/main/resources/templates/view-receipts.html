@@ -10,9 +10,14 @@
 <main class="p-1 text-center my-main">
     <section class="mainadd">
         <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички рецепти</h1>
+        <div class="mt-5 col-sm-12 my-auto align-self-center">
+            <input id="searchInput" class="form-control mr-sm-2 w-50 " type="search"
+                   placeholder="Търси по име на рецепта" aria-label="Search">
+        </div>
+        <hr class="border-bottom w-75">
 
         <div class="row">
-            <div class="col-md-12 card-columns">
+            <div class="col-md-12 card-columns" id="receiptList">
                 <!--            <div class="card-deck">-->
                 <div th:each="a : ${receipts}" th:object="${a}" class="card mb-4 box-shadow bg-transparent">
                     <img th:src="*{urlToPic}" class="card-img-top" alt="Thumbnail [100%x225]"
@@ -39,6 +44,8 @@
         </div>
     </section>
 </main>
+
 <footer th:replace="frags/footer"></footer>
+<script th:src="@{/js/receipt-search-bar.js}"></script>
 </body>
 </html>
