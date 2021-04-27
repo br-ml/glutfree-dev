@@ -5,8 +5,8 @@
 
 
 
-<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-nav rounded">
-    <p class="mb-0"><a  href="/">
+<nav th:fragment="navbar" class="navbar  navbar-expand-lg bg-nav rounded">
+    <p class="mb-0 d-inline-block"><a  href="/">
         <img src="/img/Logo.png" alt="pic">
     </a>
     </p>
@@ -38,22 +38,6 @@
             </form>
             <li><a class="pl-2" href="https://www.facebook.com/www.glutfree.eu"><img class="p-0" src="/img/logo-fb.png" alt="pic" style="height: 40px; width: 40px;"></a></li>
 
-
-            <!--            <li class="nav-item col-md-4" sec:authorize="!isAuthenticated()">-->
-<!--                <form th:action="@{/users/login}" method="GET">-->
-<!--                <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">-->
-<!--                    Вход-->
-<!--                </button>-->
-<!--                </form>-->
-<!--            </li>-->
-<!--            <li class="nav-item col-md-4" sec:authorize="!isAuthenticated()">-->
-
-<!--                <form th:action="@{/users/register}" method="GET">-->
-<!--                    <button type="submit" class="btn btn-outline-success nav-link text-darkgreen border-1 border-darkgreen bg-white text-center active h5">-->
-<!--                        Регистрация-->
-<!--                    </button>-->
-<!--                </form>-->
-<!--            </li>-->
 
             <li class="nav-item offset-sm-12" sec:authorize="hasRole('ROLE_ADMIN')"  >
 

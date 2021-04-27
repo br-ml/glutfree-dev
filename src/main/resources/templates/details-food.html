@@ -11,9 +11,9 @@
 <main class="align-content-center bg-transparent">
     <section class="mainadd">
     <div class="justify-content-center">
-        <h1 class="text-lightgreen border-white pl-4 text-center" >Детайли за продукта</h1>
+        <h3 class="text-lightgreen border-white pl-4 text-center" >Детайли за продукта</h3>
         <hr class="border-bottom w-75">
-        <div id="container-legend" class="text-center" style="white-space:nowrap">
+        <div id="container-legend" class="text-center" >
             <div class="font-weight-bold h5" id="text1" style="display:inline; white-space:nowrap;">
                 Легенда :
             </div>
@@ -21,56 +21,56 @@
                 Тествано с Нима :            </div>
             <div class="pr-4" id="image2" style="display:inline;">
                 <img src="/img/nima-logo.png" alt="pic"
-                     style="height: 40px; width: 40px;">            </div>
+                     style="height: 25px; width: 25px;">            </div>
             <div id="text3" style="display:inline; white-space:nowrap;">
                 Отбелязано без глутен :            </div>
             <div class="pr-4"  id="image3" style="display:inline;">
                 <img src="/img/GlutenFree-s-logo.png" alt="pic"
-                     style="height: 40px; width: 40px; ">            </div>
+                     style="height: 25px; width: 25px; ">            </div>
             <div id="text4" style="display:inline; white-space:nowrap;">
                 Отбелязано без лактоза :            </div>
             <div class="pr-4"  id="image4" style="display:inline;">
                 <img  src="/img/LactoseFree-s-logo.png" alt="pic"
-                      style="height: 40px; width: 40px;">            </div>
+                      style="height: 25px; width: 25px;">            </div>
             <div id="text5" style="display:inline; white-space:nowrap;">
                 Тествано с GlutenToxHome :            </div>
             <div class="pr-4"  id="image5" style="display:inline;">
                 <img  src="/img/logo-tox-sm2.png" alt="pic"
-                      style="height: 40px; width: 60px;">            </div>
+                      style="height: 25px; width: 40px;">            </div>
 
         </div>
-        <hr class="border-bottom w-75">
+<!--        <hr class="border-bottom w-75">-->
 
     </div>
     <div th:object="${food}" class="row rounded mb-5 mt-3">
         <div  class="col-md-3  text-light rounded">
             <dl class="row pt-3 border-1">
-                <dt class="col-sm-3 text-lightgreen text-right p-0" >Име:</dt>
-                <dd class="col-sm-9 text-lightgreen text-left pb-2" th:text="|*{name}|">Име</dd>
-                <dt class="col-sm-3 text-lightgreen text-right p-0 ">Марка: </dt>
-                <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{brand}|">Марка</dd>
-                <dt class="col-sm-3 text-lightgreen text-right p-0" >Детайли:</dt>
-                <dd class="col-sm-9 text-lightgreen text-left pb-2" th:text="|*{details}|">Детайли</dd>
-                <dt class="col-sm-3 text-lightgreen text-right p-0 ">Тествано на: </dt>
-                <dd class="col-sm-9 text-lightgreen text-left pb-2 " th:text="| *{pictureDate}|">Тествано на</dd>
-                <dt class="col-sm-3 text-lightgreen text-right p-0 align-content-center ">Магазин: </dt>
+                <dt class="col-sm-3 text-lightgreen  pl-3" >Име:</dt>
+                <dd class="col-sm-9 text-lightgreen text-left " th:text="|*{name}|"></dd>
+                <dt class="col-sm-3 text-lightgreen  pl-3 ">Марка: </dt>
+                <dd class="col-sm-9 text-lightgreen text-left  " th:text="| *{brand}|"></dd>
+                <dt class="col-sm-3 text-lightgreen pl-3" >Детайли:</dt>
+                <dd class="col-sm-9 text-lightgreen text-left " th:text="|*{details}|"></dd>
+                <dt class="col-sm-3 text-lightgreen pl-3">ДатаТест: </dt>
+                <dd class="col-sm-9 text-lightgreen text-left  " th:text="| *{pictureDate}|"></dd>
+                <dt class="col-sm-3 text-lightgreen pl-3 align-content-center ">Магазин: </dt>
                 <a  class="text-lightgreen" th:href= "*{store}">
-                    <dd class="col-sm-9 text-lightgreen text-left pb-2">
+                    <dd class="col-sm-9 text-lightgreen text-left">
                         <img class="p-1" th:src= "*{storelogoUrl}" alt="pic"
-                             style="height: 50px; width: 50px;">
+                             style="height: 40px; width: 40px;">
                 </a></dd>
 
-                <dt class="col-sm-3 text-lightgreen text-right p-0 ">Тестван: </dt>
+                <dt class="col-sm-3 text-lightgreen pl-3 ">Тестван: </dt>
                 <img th:if="*{nimaTested}" src="/img/nima-logo.png" alt="pic"
-                     style="height: 50px; width: 50px;">
+                     style="height: 40px; width: 40px;">
 
                 <img th:if="*{markedAsGF}" src="/img/GlutenFree-s-logo.png" alt="pic"
-                     style="height: 50px; width: 50px; padding-left: 5px">
+                     style="height: 40px; width: 40px; padding-left: 5px">
 
                 <img th:if="*{withoutLactose}" src="/img/LactoseFree-s-logo.png" alt="pic"
-                     style="height: 50px; width: 50px;">
+                     style="height: 40px; width: 40px;">
                 <img th:if="*{glutenTox}" src="/img/logo-tox-sm2.png" alt="pic"
-                     style="height: 50px; width: 70px;">
+                     style="height: 40px; width: 60px;">
 
 
             </dl>
