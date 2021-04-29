@@ -77,20 +77,20 @@
         </div>
 
         <div  class="col-md-8  p-2 text-light rounded border-1 border-darkgreen img-magnifier-container">
+            <a th:href="*{urlToPic}" target="_blank">
             <img th:src="*{urlToPic}" class="card-img-top center" alt="pic"
                  data-holder-rendered="true"
                  style="height: 425px; width: 400px;  text-align: center;">
-            <img th:src="*{urlToLabelImage}" class="card-img-top center" alt="pic"
+            </a>
+
+            <a th:href="*{urlToLabelImage}" target="_blank">
+            <img  th:if="*{!nimaTested}" th:src="*{urlToLabelImage}" class="card-img-top center" alt="pic"
                  data-holder-rendered="true"
                  style="height: 425px; width: 400px;  text-align: center;">
+            </a>
             <p class="text-lightgreen " style="white-space:nowrap" th:text="|Снимка Facebook, публикувана от: *{copyright}|" >Снимка:</p>
 
         </div>
-
-        <script>
-
-        </script>
-
 
     </div>
 

@@ -33,6 +33,7 @@ const displayReceipt = (receipt) => {
 <!--     <div class="col">-->
 <!--        <div class="col-md-12 card-columns">-->
             <div class="card mb-4 box-shadow bg-transparent align-items-center">
+            
                 <img src="${a.urlToPic}" class="card-img-top" alt="Thumbnail [100%x225]"
                      data-holder-rendered="true"
                      style="height: 225px; width: 200px;">

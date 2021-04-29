@@ -24,23 +24,23 @@
                      style="height: 40px; width: 40px;">
             </div>
 
-            <div id="text3" style="display:inline; white-space:nowrap;">
-                Отбелязано без глутен :
-            </div>
+<!--            <div id="text3" style="display:inline; white-space:nowrap;">-->
+<!--                Отбелязано без глутен :-->
+<!--            </div>-->
 
-            <div class="pr-4"  id="image3" style="display:inline;">
-                <img src="../img/GlutenFree-s-logo.png" alt="pic"
-                     style="height: 40px; width: 40px; ">
-            </div>
+<!--            <div class="pr-4"  id="image3" style="display:inline;">-->
+<!--                <img src="../img/GlutenFree-s-logo.png" alt="pic"-->
+<!--                     style="height: 40px; width: 40px; ">-->
+<!--            </div>-->
 
-            <div id="text4" style="display:inline; white-space:nowrap;">
-                Отбелязано без лактоза :
-            </div>
+<!--            <div id="text4" style="display:inline; white-space:nowrap;">-->
+<!--                Отбелязано без лактоза :-->
+<!--            </div>-->
 
-            <div class="pr-4"  id="image4" style="display:inline;">
-                <img  src="../img/LactoseFree-s-logo.png" alt="pic"
-                      style="height: 40px; width: 40px;">
-            </div>
+<!--            <div class="pr-4"  id="image4" style="display:inline;">-->
+<!--                <img  src="../img/LactoseFree-s-logo.png" alt="pic"-->
+<!--                      style="height: 40px; width: 40px;">-->
+<!--            </div>-->
 
             <div id="text5" style="display:inline; white-space:nowrap;">
                 Тествано с GlutenToxHome :            </div>
@@ -57,11 +57,12 @@
         <hr class="border-bottom w-75">
     <div class="row">
         <div class="col-md-12 card-columns" id="foodList">
-<!--            <div class="card-deck">-->
             <div th:each="a : ${latest6testedFoods}" th:object="${a}" class="card mb-4 box-shadow bg-transparent">
+                <a th:href="@{/food/details/{id}(id= *{id})}" >
                 <img th:src="*{urlToPic}" class="card-img-top" alt="Thumbnail [100%x225]"
                      data-holder-rendered="true"
                      style="height: 225px; width: 200px;">
+                </a>
                 <div class="card-body">
                     <div class="text-center">
                         <p class="card-text border-bottom "th:text="|Име: *{name}|"></p>
@@ -90,7 +91,7 @@
                     <div class="d-flex justify-content-between align-items-center">
 
                         <div class="btn-group pt-2">
-                            <a th:href="@{/food/details/{id}(id= *{id})} "  type="button"  class="btn btn-primary btn-block w-30">Details</a>
+                            <a th:href="@{/food/details/{id}(id= *{id})} "  type="button"  class="btn btn-primary btn-block w-30">Детайли</a>
                         </div>
                         <div sec:authorize="hasRole('ROLE_ADMIN')" class="p-2 d-flex justify-content-center">
                             <a th:href="@{/food/delete/{id}(id= *{id})}" type="button" class="btn btn-primary btn-block w-30">Delete</a>

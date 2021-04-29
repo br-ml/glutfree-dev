@@ -25,7 +25,7 @@ public class FoodAddBindingModel {
     public FoodAddBindingModel() {
     }
     @NotBlank(message = "The name cannot be empty!")
-    @Length(min = 2, max = 50, message = "The name must contains between 2 and 50 characters.")
+    @Length(min = 2, max = 90, message = "The name must contains between 2 and 90 characters.")
     public String getName() {
         return name;
     }
@@ -35,7 +35,7 @@ public class FoodAddBindingModel {
     }
 
     @NotBlank(message = "The brand cannot be empty!")
-    @Length(min = 2, max = 50, message = "The brand name must contains between 2 and 50 characters.")
+    @Length(min = 2, max = 90, message = "The brand name must contains between 2 and 90 characters.")
     public String getBrand() {
         return brand;
     }
@@ -52,23 +52,7 @@ public class FoodAddBindingModel {
         this.image = image;
     }
 
-    //
-//    public String getUrlToPic() {
-//        return urlToPic;
-//    }
-//
-//    public void setUrlToPic(String urlToPic) {
-//        this.urlToPic = urlToPic;
-//    }
 
-    //
-//    public String getShortDescription() {
-//        return shortDescription;
-//    }
-//
-//    public void setShortDescription(String shortDescription) {
-//        this.shortDescription = shortDescription;
-//    }
 
 
     public MultipartFile getLabelImage() {

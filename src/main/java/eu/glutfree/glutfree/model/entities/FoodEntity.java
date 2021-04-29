@@ -29,7 +29,7 @@ public class FoodEntity extends BaseEntity{
     public FoodEntity() {
     }
     @Column(nullable = false)
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 90)
     public String getName() {
         return name;
     }

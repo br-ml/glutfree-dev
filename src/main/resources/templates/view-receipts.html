@@ -9,7 +9,7 @@
 </header>
 <main class="p-1 text-center my-main">
     <section class="mainadd">
-        <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички рецепти</h1>
+        <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички рецепти - Очаквайте скоро !!!</h1>
         <div class="mt-5 col-sm-12 my-auto align-self-center">
             <input id="searchInput" class="form-control mr-sm-2 w-75 " type="search"
                    placeholder="Търси по име на рецепта" aria-label="Search">
@@ -33,8 +33,14 @@
                         </div>
 
 
-                        <div sec:authorize="hasRole('ROLE_ADMIN')" class="p-2 d-flex justify-content-center">
-                            <a th:href="@{/receipt/delete/{id}(id= *{id})}" type="button" class="btn btn-primary btn-block w-50">Delete</a>
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div class="btn-group pt-2">
+                                <a th:href="@{/receipt/details/{id}(id= *{id})} "  type="button"  class="btn btn-primary btn-block w-30">Детайли</a>
+                            </div>
+                            <div sec:authorize="hasRole('ROLE_ADMIN')" class="p-2 d-flex justify-content-center">
+                                <a th:href="@{/receipt/delete/{id}(id= *{id})}" type="button" class="btn btn-primary btn-block w-30">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
