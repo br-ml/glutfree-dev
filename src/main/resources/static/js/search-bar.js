@@ -52,8 +52,8 @@ const displayFoods = (foods) => {
                           <p class="card-text border-bottom ">
                           
                   ${a.nimaTested ?  '<img  src="../img/nima-logo.png" alt="pic" style="height: 50px; width: 50px;">' : ''}
-                  ${a.markedAsGF ? '<img src="../img/GlutenFree-s-logo.png" alt="pic"  style="height: 50px; width: 50px; padding-left: 5px">' : ''}
-                   ${a.withoutLactose  ? '<img  src="../img/LactoseFree-s-logo.png" alt="pic" style="height: 50px; width: 50px;">' : ''}
+                  ${a.markedAsGF ? '<img src="../img/GlutenFree-s-logo.png" alt="pic"  style="height: 50px; width: 55px; padding-left: 5px">' : ''}
+                   ${a.withoutLactose  ? '<img  src="../img/LactoseFree-s-logo.png" alt="pic" style="height: 50px; width: 55px;">' : ''}
                             </p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
