@@ -9,29 +9,29 @@
 </header>
 <main class="p-1 text-center my-main">
     <section class="mainadd">
-        <h1 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички видове Храна</h1>
+        <h2 class=" py-2 text-lightgreen border-bottom border-darkgreen">Всички храни</h2>
         <div id="container-legend" >
             <div class="font-weight-bold h5" id="text1" style="display:inline; white-space:nowrap;">
                 Легенда :
             </div>
             <div id="text2" style="display:inline; white-space:nowrap;">
-                Тествано с Нима :            </div>
+                Нима :            </div>
             <div class="pr-4" id="image2" style="display:inline;">
                 <img src="../img/nima-logo.png" alt="pic" style="height: 40px; width: 40px;">            </div>
 
             <div id="text3" style="display:inline; white-space:nowrap;">
-                Отбелязано без глутен :           </div>
+                Без глутен :           </div>
             <div class="pr-4"  id="image3" style="display:inline;">
                 <img src="../img/GlutenFree-s-logo.png" alt="pic"
                      style="height: 40px; width: 40px; ">            </div>
             <div id="text4" style="display:inline; white-space:nowrap;">
-                Отбелязано без лактоза :            </div>
+                Без лактоза :            </div>
 
             <div class="pr-4"  id="image4" style="display:inline;">
                 <img  src="../img/LactoseFree-s-logo.png" alt="pic"
                       style="height: 40px; width: 40px;">            </div>
             <div id="text5" style="display:inline; white-space:nowrap;">
-                Тествано с GlutenToxHome :            </div>
+                GlutenToxHome :            </div>
             <div class="pr-4"  id="image5" style="display:inline;">
                 <img  src="../img/logo-tox-sm2.png" alt="pic"
                       style="height: 40px; width: 60px;">            </div>
@@ -39,9 +39,8 @@
         </div>
         <div class="mt-5 col-sm-12 my-auto align-self-center">
             <input id="searchInput" class="form-control mr-sm-2 w-75 " type="search"
-                   placeholder="Търси по тип храна или име на магазин" aria-label="Search">
+                   placeholder="Търси по тип храна(кирилица) или име на магазин(латиница)" aria-label="Search">
         </div>
-        <hr class="border-bottom w-75">
         <h4 class="  text-lightgreen border-bottom border-darkgreen">Последно добавени храни:</h4>
 
         <div class="row">
@@ -72,10 +71,10 @@
                                  style="height: 50px; width: 50px;">
 
                             <img th:if="*{markedAsGF}" src="../img/GlutenFree-s-logo.png" alt="pic"
-                                 style="height: 50px; width: 50px; padding-left: 5px">
+                                 style="height: 50px; width: 55px; padding-left: 5px">
 
                             <img th:if="*{withoutLactose}" src="../img/LactoseFree-s-logo.png" alt="pic"
-                                 style="height: 50px; width: 50px;">
+                                 style="height: 50px; width: 55px;">
                             <img th:if="*{glutenTox}" src="../img/logo-tox-sm2.png" alt="pic"
                                  style="height: 50px; width: 70px;">
                         </p>
