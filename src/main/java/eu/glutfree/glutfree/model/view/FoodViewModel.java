@@ -19,11 +19,20 @@ public class FoodViewModel {
     private boolean withoutLactose;
     private String storelogoUrl;
     private String store;
+    private String storeName;
     private String details;
     private boolean glutenTox;
 
 
     public FoodViewModel() {
+    }
+
+    public String getStoreName() {
+        return storeName;
+    }
+
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
     }
 
     public Long getId() {

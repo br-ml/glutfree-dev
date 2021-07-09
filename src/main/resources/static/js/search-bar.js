@@ -19,7 +19,8 @@ searchBar.addEventListener('keyup', (e) => {
     let filteredFoods = allFoods.filter(food => {
         return food.name.toLowerCase().includes(searchingCharacters)
             || food.brand.toLowerCase().includes(searchingCharacters)
-            || food.store.toLowerCase().includes(searchingCharacters);
+            || food.storeName.toLowerCase().includes(searchingCharacters);
+            // || food.store.toLowerCase().includes(searchingCharacters);
     });
     console.log(filteredFoods);
     displayFoods(filteredFoods);
