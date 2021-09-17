@@ -1,6 +1,8 @@
 package eu.glutfree.glutfree.config;
 
 import com.cloudinary.Cloudinary;
+import eu.glutfree.glutfree.service.FoodService;
+import eu.glutfree.glutfree.service.impl.FoodServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

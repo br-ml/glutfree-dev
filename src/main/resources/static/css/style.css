@@ -96,7 +96,7 @@ body {
     color: white;
     /*width: 35%;*/
     margin: 0;
-    padding: 60px 0 120px 60px;
+    padding: 60px 0 60px 60px;
 }
 
 
@@ -106,7 +106,7 @@ body {
     border: 2px solid white;
     color: white;
     padding: 10px 10px;
-    margin: 0 0 90px 60px;
+    margin: 0 0 30px 60px;
 }
 .site-header button:hover{
     background:#566616 ;
