@@ -24,6 +24,7 @@ public class FoodEntity extends BaseEntity{
     private StoreEntity store;
     private String details;
     private boolean glutenTox;
+    private String category;
 
 
     public FoodEntity() {
@@ -128,5 +129,13 @@ public class FoodEntity extends BaseEntity{
 
     public void setGlutenTox(boolean glutenTox) {
         this.glutenTox = glutenTox;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

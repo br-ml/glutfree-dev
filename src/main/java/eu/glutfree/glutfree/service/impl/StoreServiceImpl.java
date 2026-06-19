@@ -3,6 +3,7 @@ package eu.glutfree.glutfree.service.impl;
 import eu.glutfree.glutfree.exceptions.StoreNotFoundException;
 import eu.glutfree.glutfree.model.entities.StoreEntity;
 import eu.glutfree.glutfree.model.service.StoreAddServiceModel;
+import eu.glutfree.glutfree.model.view.StoreViewModel;
 import eu.glutfree.glutfree.repository.StoreRepository;
 import eu.glutfree.glutfree.service.StoreService;
 import org.modelmapper.ModelMapper;
@@ -48,5 +49,12 @@ public class StoreServiceImpl implements StoreService {
     @Override
     public List<String> findAllStores() {
         return storeRepository.findAllStores();
+    }
+
+    @Override
+    public List<StoreViewModel> findAllStoreDetails() {
+        return storeRepository.findAll().stream()
+                .map(store -> modelMapper.map(store, StoreViewModel.class))
+                .collect(java.util.stream.Collectors.toList());
     }
 }

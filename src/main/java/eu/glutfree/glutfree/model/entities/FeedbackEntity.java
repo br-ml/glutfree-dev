@@ -2,10 +2,7 @@ package eu.glutfree.glutfree.model.entities;
 
 import eu.glutfree.glutfree.model.entities.enums.TypeOfPlaceEnums;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;

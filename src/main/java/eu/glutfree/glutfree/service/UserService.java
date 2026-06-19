@@ -2,6 +2,7 @@ package eu.glutfree.glutfree.service;
 
 import eu.glutfree.glutfree.model.entities.UserEntity;
 import eu.glutfree.glutfree.model.service.UserRegistrationServiceModel;
+import eu.glutfree.glutfree.model.service.UserUpdateServiceModel;
 
 import java.util.List;
 

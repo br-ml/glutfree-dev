@@ -113,6 +113,44 @@ public class    FoodServiceImpl implements FoodService {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
+    @Override
+    public List<FoodViewModel> findGFAndWithoutLactose() {
+        return this.foodRepository.findAllByWithoutLactoseIsTrue().stream().map( foodEntity -> {
+            FoodViewModel foodViewModel = this.modelMapper.map( foodEntity , FoodViewModel.class);
+            foodViewModel.setStorelogoUrl(foodEntity.getStore().getLogoUrl());
+            return foodViewModel;
+        }).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public List<FoodViewModel> findAllByCategory (String category) {
+
+        return this.foodRepository.findAllByCategoryEquals(category).stream().map( foodEntity -> {
+            FoodViewModel foodViewModel = this.modelMapper.map( foodEntity , FoodViewModel.class);
+            foodViewModel.setStorelogoUrl(foodEntity.getStore().getLogoUrl());
+            return foodViewModel;
+        }).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public List<FoodViewModel> findAllTestedFoods() {
+        return this.foodRepository.findAllByNimaTestedIsTrue().stream().map(foodEntity -> {
+            FoodViewModel foodViewModel = this.modelMapper.map(foodEntity, FoodViewModel.class);
+            foodViewModel.setStorelogoUrl(foodEntity.getStore().getLogoUrl());
+            foodViewModel.setStoreName(foodEntity.getStore().getName());
+            foodViewModel.setStore(foodEntity.getStore().getStoreWebSiteUrl());
+            return foodViewModel;
+        }).collect(Collectors.toList());
+    }
+
+    @Override
+    public void checkCatergory(String choko) {
+        List<FoodViewModel> listOfChokos = this.findAllByCategory(choko);
+        listOfChokos.forEach((n) -> System.out.println(n.getName()));
+    }
+
 
 
 

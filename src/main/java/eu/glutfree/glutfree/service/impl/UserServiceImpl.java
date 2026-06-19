@@ -1,6 +1,7 @@
 package eu.glutfree.glutfree.service.impl;
 
 import eu.glutfree.glutfree.exceptions.RoleNotFoundException;
+import eu.glutfree.glutfree.exceptions.StoreNotFoundException;
 import eu.glutfree.glutfree.exceptions.UserNotFoundException;
 import eu.glutfree.glutfree.model.entities.UserEntity;
 import eu.glutfree.glutfree.model.entities.UserRoleEntity;
@@ -15,10 +16,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 

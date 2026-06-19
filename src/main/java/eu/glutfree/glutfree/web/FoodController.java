@@ -115,6 +115,30 @@ public class FoodController {
         return "details-food";
     }
 
+    @GetMapping("/category/{category}")
+    public ModelAndView foodsByCategory(@PathVariable String category, ModelAndView modelAndView) {
+
+        modelAndView.addObject("foodsByCategory", this.foodService.findAllByCategory(category));
+        modelAndView.setViewName("view-foodsByCategory");
+
+        return modelAndView;
+    }
+
+    @GetMapping("/withoutLactose")
+    public ModelAndView withoutLactose(ModelAndView modelAndView) {
+
+        modelAndView.addObject("foodsWithoutLactose", this.foodService.findGFAndWithoutLactose());
+        modelAndView.setViewName("view-foodsWthLactose");
+
+        return modelAndView;
+    }
+
+
+    @GetMapping("/category")
+    public String categories() {
+        return "foodCategories";
+    }
+
 
 
 

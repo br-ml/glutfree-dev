@@ -1,6 +1,7 @@
 package eu.glutfree.glutfree.web;
 
 import eu.glutfree.glutfree.model.bindings.StoreAddBindingModel;
+import eu.glutfree.glutfree.model.service.ReceiptAddServiceModel;
 import eu.glutfree.glutfree.model.service.StoreAddServiceModel;
 import eu.glutfree.glutfree.service.StoreService;
 import org.modelmapper.ModelMapper;

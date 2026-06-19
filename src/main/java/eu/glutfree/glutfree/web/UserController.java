@@ -1,8 +1,10 @@
 package eu.glutfree.glutfree.web;
 
+import eu.glutfree.glutfree.model.bindings.UserLoginBindingModel;
 import eu.glutfree.glutfree.model.bindings.UserRegistrationBindingModel;
 import eu.glutfree.glutfree.model.bindings.UserUpdateBindingModel;
 import eu.glutfree.glutfree.model.service.UserRegistrationServiceModel;
+import eu.glutfree.glutfree.model.service.UserUpdateServiceModel;
 import eu.glutfree.glutfree.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;

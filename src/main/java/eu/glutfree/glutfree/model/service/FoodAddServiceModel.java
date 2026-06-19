@@ -20,6 +20,8 @@ public class FoodAddServiceModel {
     private String store;
     private String details;
     private boolean glutenTox;
+    private String category;
+
 
     public FoodAddServiceModel() {
     }
@@ -135,5 +137,13 @@ public class FoodAddServiceModel {
 
     public void setGlutenTox(boolean glutenTox) {
         this.glutenTox = glutenTox;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

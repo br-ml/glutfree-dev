@@ -4,7 +4,7 @@ const foodList = document.getElementById('foodList');
 const searchBar = document.getElementById('searchInput');
 const allFoods = [];
 
-fetch("http://localhost:8080/food/api-tested").
+fetch("https://www.glutfree.eu/food/api-tested").
 then(response => response.json()).
 then(data => {
     for (let food of data) {
@@ -19,7 +19,7 @@ searchBar.addEventListener('keyup', (e) => {
     let filteredFoods = allFoods.filter(food => {
         return food.name.toLowerCase().includes(searchingCharacters)
             || food.brand.toLowerCase().includes(searchingCharacters)
-            || food.store.toLowerCase().includes(searchingCharacters);
+            || food.storeName.toLowerCase().includes(searchingCharacters);
     });
     console.log(filteredFoods);
     displayFoods(filteredFoods);
@@ -32,7 +32,7 @@ const displayFoods = (foods) => {
         .map((a) => {
             return ` <div class="col" >
                 <div class="card mb-4 box-shadow bg-transparent align-items-center">
-                <a href="/food/details/${a.id}">
+               <a href="/food/details/${a.id}" >
                 <img src="${a.urlToPic}" class="card-img-top" alt="pic"
                      data-holder-rendered="true"
                      style="height: 225px; width: 225px;">
@@ -70,8 +70,4 @@ const displayFoods = (foods) => {
 
 }
 
-
-// <div sec:authorize="hasRole('ROLE_ADMIN')" class="btn-group pt-2">
-//     <a href="/food/delete/${a.id}"  type="button" class="btn btn-primary btn-block w-30">Delete</a>
-// </div>
 

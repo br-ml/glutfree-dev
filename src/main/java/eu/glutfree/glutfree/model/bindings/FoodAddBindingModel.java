@@ -21,6 +21,8 @@ public class FoodAddBindingModel {
     private String store;
     private String details;
     private boolean glutenTox;
+    private String category;
+
 
     public FoodAddBindingModel() {
     }
@@ -129,5 +131,13 @@ public class FoodAddBindingModel {
 
     public void setGlutenTox(boolean glutenTox) {
         this.glutenTox = glutenTox;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

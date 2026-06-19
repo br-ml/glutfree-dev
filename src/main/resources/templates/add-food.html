@@ -68,6 +68,17 @@
             <div class="form-row m-5 text-lightgreen ">
 
                 <div class="col">
+                    <label for="category">Category</label>
+                    <input id="category" th:value="*{category}" th:errorclass="bg-danger" name="category" type="text" class="form-control" placeholder="Категория">
+                    <small th:if="${#fields.hasErrors('category')}" th:errors="*{category}" id="categoryError" class="form-text bg-danger rounded">Category</small>
+                </div>
+
+
+            </div>
+
+            <div class="form-row m-5 text-lightgreen ">
+
+                <div class="col">
                     <label for="store">Магазин</label>
                     <select name="store" id="store" class="form-control">
                         <option value="">- Избери Магазин -</option>

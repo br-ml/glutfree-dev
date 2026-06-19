@@ -1,8 +1,9 @@
 package eu.glutfree.glutfree.service;
 
 import eu.glutfree.glutfree.model.entities.StoreEntity;
-import eu.glutfree.glutfree.model.service.ReceiptAddServiceModel;
+
 import eu.glutfree.glutfree.model.service.StoreAddServiceModel;
+import eu.glutfree.glutfree.model.view.StoreViewModel;
 
 import java.util.List;
 
@@ -16,5 +17,7 @@ public interface StoreService {
     StoreEntity findStoreByName(String name);
 
     List<String> findAllStores();
+
+    List<StoreViewModel> findAllStoreDetails();
 }
 

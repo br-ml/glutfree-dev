@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="frags/head"></head>
+<body>
+<header>
+    <nav th:replace="frags/navbar"></nav>
+</header>
+<main class="p-1 text-center my-main">
+    <section class="mainadd">
+        <h2 class=" py-2 text-lightgreen border-bottom border-darkgreen">Продукти без глутен и лактоза</h2>
+        <div id="container-legend" >
+            <div class="font-weight-bold h5" id="text1" style="display:inline; white-space:nowrap;">
+                Легенда :
+            </div>
+            <div id="text2" style="display:inline; white-space:nowrap;">
+                Нима :            </div>
+            <div class="pr-3" id="image2" style="display:inline;">
+                <img src="/img/nima-logo.png" alt="pic" style="height: 40px; width: 40px;">            </div>
+
+            <div id="text3" style="display:inline; white-space:nowrap;">
+                Без глутен :           </div>
+            <div class="pr-3"  id="image3" style="display:inline;">
+                <img src="/img/GlutenFree-s-logo.png" alt="pic"
+                     style="height: 40px; width: 40px; ">            </div>
+            <div id="text4" style="display:inline; white-space:nowrap;">
+                Без лактоза :            </div>
+
+            <div class="pr-3"  id="image4" style="display:inline;">
+                <img  src="/img/LactoseFree-s-logo.png" alt="pic"
+                      style="height: 40px; width: 40px;">            </div>
+            <div id="text5" style="display:inline; white-space:nowrap;">
+                GToxHome :            </div>
+            <div class="pr-3"  id="image5" style="display:inline;">
+                <img  src="/img/logo-tox-sm2.png" alt="pic"
+                      style="height: 40px; width: 55px;">            </div>
+
+        </div>
+
+        <div class="row">
+        <div class="col-md-12 card-columns" id="foodList">
+            <div th:each="a : ${foodsWithoutLactose}" th:object="${a}" class="card mb-4 box-shadow bg-transparent">
+                <a th:href="@{/food/details/{id}(id= *{id})}" >
+                    <img  th:src="*{urlToPic}" class="card-img-top" alt="Open website with Google Chrome"
+                     data-holder-rendered="true"
+                     style="height: 225px; width: 200px;">
+                </a>
+                <div class="card-body">
+                    <div class="text-center">
+                        <p class="card-text border-bottom "th:text="|Име: *{name}|"></p>
+                        <p class="card-text border-bottom "th:text="|Марка: *{brand}|" ></p>
+                        <p class="card-text border-bottom ">Магазин :
+                            <a class="text-lightgreen" th:href= "*{store}">
+                                <img class="p-1" th:src= "*{storelogoUrl}" alt="pic"
+                                     style="height: 50px; width: 50px;">
+                            </a>
+                        </p>
+
+<!--                        <a class="text-lightgreen" th:href= "*{store}">  <p class="card-text border-bottom "th:text="|Магазин: *{store}|" ></p> </a>-->
+
+
+                        <p class="card-text border-bottom " >
+
+                            <img th:if="*{nimaTested}" src="/img/nima-logo.png" alt="pic"
+                                 style="height: 50px; width: 50px;">
+
+                            <img th:if="*{markedAsGF}" src="/img/GlutenFree-s-logo.png" alt="pic"
+                                 style="height: 50px; width: 55px; padding-left: 5px">
+
+                            <img th:if="*{withoutLactose}" src="/img/LactoseFree-s-logo.png" alt="pic"
+                                 style="height: 50px; width: 55px;">
+                            <img th:if="*{glutenTox}" src="/img/logo-tox-sm2.png" alt="pic"
+                                 style="height: 50px; width: 70px;">
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                    <div class="btn-group pt-2">
+                        <a th:href="@{/food/details/{id}(id= *{id})} "  type="button"  class="btn btn-primary btn-block w-30">Детайли</a>
+                    </div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')" class="p-2 d-flex justify-content-center">
+                            <a th:href="@{/food/delete/{id}(id= *{id})}" type="button" class="btn btn-primary btn-block w-30">Delete</a>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+<!--        </div>-->
+        </div>
+
+    </div>
+        </section>
+</main>
+<footer th:replace="frags/footer"></footer>
+<script th:src="@{/js/search-bar.js}">
+
+
+</script>
+</body>
+</html>

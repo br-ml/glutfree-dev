@@ -23,6 +23,12 @@ public interface FoodService {
     FoodViewModel findById(Long id);
 
     FoodEntity findEntityById(Long foodId);
+    void checkCatergory(String choko);
+    List<FoodViewModel> findGFAndWithoutLactose();
+    List<FoodViewModel> findAllByCategory(String category);
+
+    List<FoodViewModel> findAllTestedFoods();
+
 
 
 
